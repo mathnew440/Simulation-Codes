@@ -1,3 +1,5 @@
+%Example 4.2, 4.3
+
 function bd=doubleequalslitsBD(z)
 
 if real(z)<0
