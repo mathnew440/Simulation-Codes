@@ -1,0 +1,95 @@
+function bd=equal2verticalslitsBD(z)
+
+% % k=2.111403927121077;
+% % t=1i*k;
+% % if imag(z)>k
+% %     bd=min(abs(z-t),abs(z-6-t));
+% % elseif imag(z)<-k
+% %     bd=min(abs(z+t),abs(z-6+t));
+% % elseif real(z)<0 && (imag(z)>=-k && imag(z)<=k)
+% %     bd=abs(real(z));
+% % elseif real(z)>6 && (imag(z)>=-k && imag(z)<=k)
+% %     bd=abs(real(z)-6);
+% % else
+% %     bd=min(abs(real(z)),6-abs(real(z)));
+% % end
+
+
+k=2.1114;
+t=1i*k;
+if real(z)<0 && imag(z)>=k
+    bd=abs(z-t);
+elseif real(z)<0 && (imag(z)>=-k && imag(z)<=k)
+    bd=abs(real(z));
+elseif real(z)<0 && imag(z)<-k
+    bd=abs(z+t);
+    
+elseif (real(z)>=0 && real(z)<=6) && imag(z)>k
+    bd=min(abs(z-t),abs(z-6-t));
+elseif  (real(z)>0 && real(z)<6) && (imag(z)>=-k && imag(z)<=k)
+    bd=min(real(z),6-real(z));    
+elseif (real(z)>=0 && real(z)<=6) && imag(z)<-k
+    bd=min(abs(z+t),abs(z-6+t));   
+    
+elseif real(z)>=6 && imag(z)>k
+    bd=abs(z-6-t);
+elseif real(z)>=6 && imag(z)<-k
+    bd=abs(z-6+t);
+else
+     bd=real(z)-6;
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% k=2.111403927121077;
+% t=1i*k;
+% if real(z)<0 && imag(z)>k
+%     bd=abs(z-t);
+% elseif real(z)<0 && (imag(z)>=-k && imag(z)<=k)
+%     bd=abs(real(z));
+% elseif real(z)<0 && imag(z)<-k
+%     bd=abs(z+t);
+% elseif real(z)>6 && imag(z)>k
+%     bd=abs(z-6-t);
+% elseif real(z)>6 && (imag(z)>=-k && imag(z)<=k)
+%     bd=abs(real(z))-6;
+% elseif real(z)>6 && imag(z)<-k
+%     bd=abs(z-6+t);
+% elseif  (real(z)>0 && real(z)<6) && (imag(z)>=k)
+%     bd=min(abs(z-t),abs(z-6-t));
+% elseif  (real(z)>0 && real(z)<6) && (imag(z)<=-k)
+%     bd=min(abs(z+t),abs(z-6+t));    
+% elseif (real(z)>0 && real(z)<3) && (imag(z)>=-k && imag(z)<=k)
+%      bd=abs(real(z));
+% elseif (real(z)>3 && real(z)<6) && (imag(z)>=-k && imag(z)<=k)
+%      bd=6-abs(real(z));
+% else
+%    bd=min(abs(real(z)),6-abs(real(z)));     
+%  
+%      
+% end
+
+
+
