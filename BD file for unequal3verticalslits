@@ -1,0 +1,62 @@
+function bd=unequal3verticalslitsBD(z)
+
+k1=2.0478;
+k2=0.4392;
+k3=1.1851;
+t1=1i*k1; 
+t2=1i*k2;
+t3=1i*k3;
+
+
+
+if real(z)<0 && imag(z)>k1
+    bd=abs(z-t1);
+elseif  real(z)<0 && (imag(z)>-k1 && imag(z)<k1)
+    bd=abs(real(z));
+elseif  real(z)<0 && imag(z)<-k1 
+    bd=abs(z+t1);  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+elseif (real(z)>0 && real(z)<4) && imag(z)>k1
+    bd=min(abs(z-t1),min(abs(z-4-t2),abs(z-7-t3)));
+elseif (real(z)>0 && real(z)<4) && (imag(z)>k3 && imag(z)<k1)
+    bd=min(abs(real(z)),min(abs(z-4-t2),abs(z-7-t3)));
+elseif (real(z)>0 && real(z)<4) && (imag(z)>k2 && imag(z)<k3)
+    bd=min(abs(real(z)),min(abs(z-4-t2),7-abs(real(z))));
+elseif (real(z)>0 && real(z)<4) && (imag(z)>-k2 && imag(z)<k2)
+    bd=min(abs(real(z)),4-abs(real(z)));
+elseif (real(z)>0 && real(z)<4) && (imag(z)>-k3 && imag(z)<-k2)
+    bd=min(abs(real(z)),min(abs(z-4+t2),7-abs(real(z))));
+elseif (real(z)>0 && real(z)<4) && (imag(z)>-k1 && imag(z)<-k3)
+    bd=min(abs(real(z)),min(abs(z-4+t2),abs(z-7+t3)));
+elseif (real(z)>0 && real(z)<4) && imag(z)>-k1
+    bd=min(abs(z+t1),min(abs(z-4+t2),7-abs(z-7+t3)));
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+elseif (real(z)>4 && real(z)<7) && imag(z)>k1
+    bd=min(abs(z-t1),min(abs(z-4-t2),abs(z-7-t3)));
+elseif (real(z)>4 && real(z)<7) && (imag(z)>k3 && imag(z)<k1)
+    bd=min(abs(real(z)),min(abs(z-4-t2),abs(z-7-t3)));
+elseif (real(z)>4 && real(z)<7) && (imag(z)>k2 && imag(z)<k3)
+    bd=min(abs(real(z)),min(abs(z-4-t2),7-abs(real(z))));
+elseif (real(z)>4 && real(z)<7) && (imag(z)>-k2 && imag(z)<k2)
+    bd=min(abs(real(z))-4,7-abs(real(z)));
+elseif (real(z)>4 && real(z)<7) && (imag(z)>-k3 && imag(z)<-k2)
+    bd=min(abs(real(z)),min(abs(z-4+t2),7-abs(real(z))));
+elseif (real(z)>4 && real(z)<7) && (imag(z)>-k1 && imag(z)<-k3)
+    bd=min(abs(real(z)),min(abs(z-4+t2),abs(z-7+t3)));
+elseif (real(z)>4 && real(z)<7) && imag(z)>-k1
+    bd=min(abs(z+t1),min(abs(z-4+t2),abs(z-7+t3)));
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+elseif (real(z)>7) && imag(z)>k1
+    bd=min(abs(z-t1),min(abs(z-4-t2),abs(z-7-t3)));
+elseif (real(z)>7) && (imag(z)>k3 && imag(z)<k1)
+    bd=min(abs(real(z)),min(abs(z-4-t2),abs(z-7-t3)));
+elseif (real(z)>7) && (imag(z)>-k3 && imag(z)<k3)
+    bd=abs(real(z))-7;
+elseif (real(z)>7) && (imag(z)>-k1 && imag(z)<-k3)
+    bd=min(abs(real(z)),min(abs(z-4+t2),abs(z-7+t3)));
+else
+     bd=min(abs(z+t1),min(abs(z-4+t2),abs(z-7+t3)));
+end
