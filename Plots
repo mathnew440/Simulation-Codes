@@ -1,0 +1,19 @@
+function simulation
+% h=HMDSimulation(@(z) singlelinesegmentBD(z),2,0:0.005:5,100000,0.001)
+ %plot(h(1,:),h(2,:))
+
+%h=HMDSimulation(@(z) doubleequalslitsBD(z),0.1,0:0.001:0.8,10000,0.001)
+%h=HMDSimulation(@(z) doubleunequalslits1BD(z),-0.2,0:0.001:1.6,10000,0.001)
+%h=HMDSimulation(@(z) doubleequalcirclesBD(z),8,0:0.0001:18,10000,0.001)
+
+%%%New
+%h=HMDSimulation(@(z) singlehorizontalslitBD(z),2,0:0.0001:5,10000,0.001)
+%h=HMDSimulation(@(z) equal2horizontalslitsBD(z),0.1,0:0.0001:0.8,10000,0.001)
+%h=HMDSimulation(@(z) unequal2horizontalslitsBD(z),-1,0:0.0001:2,10000,0.001)
+%h=HMDSimulation(@(z) unequal3horizontalslitsBD(z),-1,0:0.0001:2,10000,0.001)
+%h=HMDSimulation(@(z) unequal4horizontalslitsBD(z),-1,0:0.0001:2.4,10000,0.001)
+
+
+%h=HMDSimulation(@(z) equal2circlesexteriorBD(z),0.5,0:0.0001:6,10000,0.001)
+%h=HMDSimulation(@(z) unequal2circlesexteriorBD(z),-2,0:0.0001:6,10000,0.001)
+%h=HMDSimulation(@(z) equal3circlesexteriorBD(z),-1,0:0.0001:6,10000,0.001)
