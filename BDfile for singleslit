@@ -1,0 +1,14 @@
+function bd=singlelinesegmentBD(z)
+
+
+if real(z)<0
+    z=-z;
+end
+if real(z)>=1
+    bd=abs(z-1);
+else
+    bd=abs(imag(z));
+end
+
+
+
