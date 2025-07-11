@@ -1,3 +1,5 @@
+%Example 4.6
+
 function bd=unequal3horizontalslitsBD(z)
 
 % if real(z)<=-0.4
