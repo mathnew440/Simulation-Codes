@@ -1,3 +1,5 @@
+% Example 4.8, 4.9, 4.10
+
 function bd=equal2verticalslitsBD(z)
 
 % % k=2.111403927121077;
