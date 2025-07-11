@@ -1,3 +1,5 @@
+%Example 4.4, 4.5
+
 function bd=doubleunequalslits1BD(z)
 
 
