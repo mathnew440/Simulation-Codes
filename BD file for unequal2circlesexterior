@@ -1,0 +1,18 @@
+function bd=unequal2circlesexteriorBD(z)
+
+if real(z)<=1 && abs(z)>1
+    bd=abs(z)-1;
+elseif real(z)>=2 && abs(z-2.5)>0.5
+    bd=abs(z-2.5)-0.5;
+elseif real(z)>1 && real(z)<2
+    bd=min(abs(z)-1,abs(z-2.5)-0.5);
+else
+    bd=0;
+end
+
+
+
+
+
+
+
