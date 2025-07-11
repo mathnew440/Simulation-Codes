@@ -1,0 +1,37 @@
+function bd=unequal3horizontalslitsBD(z)
+
+% if real(z)<=-0.4
+%     bd=abs(z+0.4);
+% elseif (-0.4<real(z)) && (real(z)<-0.1)
+%     bd=abs(imag(z));
+% elseif (-0.1<=real(z)) && (real(z)<=0.1)
+%     bd=min(abs(z+0.1),abs(z-0.1));
+% elseif (0.1<real(z)) && (real(z)<0.2)
+%     bd=abs(imag(z));
+% elseif (0.2<=real(z)) && (real(z)<=0.4)
+%     bd=min(abs(z-0.2),abs(z-0.4));
+% elseif (0.4<real(z)) && (real(z)<1)  
+%     bd=abs(imag(z));
+% else
+%     bd=abs(z-1);
+% end
+
+
+
+
+if real(z)<-0.5
+    bd=abs(z+0.5);
+elseif (-0.5<=real(z)) && (real(z)<=-0.293)
+    bd=abs(imag(z));
+elseif (-0.293<real(z)) && (real(z)<-0.207)
+    bd=min(abs(z+0.293),abs(z+0.207));
+elseif (-0.207<=real(z)) && (real(z)<=-0.15)
+    bd=abs(imag(z));
+elseif (-0.15<real(z)) && (real(z)<0.11)
+    bd=min(abs(z+0.15),abs(z-0.11));
+elseif (0.11<=real(z)) && (real(z)<=0.44)  
+    bd=abs(imag(z));
+else
+    bd=abs(z-0.44);
+end
+
