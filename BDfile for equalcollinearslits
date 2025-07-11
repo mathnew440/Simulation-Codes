@@ -1,0 +1,13 @@
+function bd=doubleequalslitsBD(z)
+
+if real(z)<0
+    z=-z;
+end
+if (real(z)>=0.2) && (real(z)<=0.5)
+    bd=abs(imag(z));
+elseif real(z)>0.5
+    bd=abs(z-0.5);
+else
+    bd=abs(z-0.2);
+end
+
