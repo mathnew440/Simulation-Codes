@@ -1,0 +1,63 @@
+function bd=unequal2verticalslitsBD(z)
+
+k1=2.173730938092327;
+k2=6.071550115638545;
+t1=1i*k1; 
+t2=1i*k2;
+
+% if real(z)>10 && (imag(z)>-k2 && imag(z)<k2)
+%     bd=abs(real(z)-10);
+% elseif real(z)>10 && (imag(z)>=k2 && imag(z)<=-k2)
+%     bd=min(abs(z-10-t2),abs(z-10+t2));
+% elseif real(z)<0 && (imag(z)>-k1 && imag(z)<k1)
+%     bd=abs(real(z));
+% elseif real(z)<0 && (imag(z)>k1 && imag(z)<k2) && (imag(z)<-k1 && imag(z)>-k2)
+%     bd=min(abs(z-t1),abs(z+t1));
+% elseif real(z)<0 && imag(z)>k2
+%     bd=min(abs(z-t1),abs(z-10-t2));
+% elseif real(z)<0 && imag(z)<-k2
+%     bd=min(abs(z+t1),abs(z-10+t2));
+% elseif  (real(z)>=0 && real(z)<=10) && (imag(z)>k2)
+%     bd=min(abs(z-t1),abs(z-10-t2));    
+% elseif (real(z)>0 && real(z)<10) && (imag(z)>-k1 && imag(z)<k1)
+%     bd=min(abs(real(z)),10-abs(real(z)));    
+% elseif (real(z)>0 && real(z)<10) && imag(z)<-k2
+%     bd=min(abs(z+t1),abs(z-10+t2));    
+% elseif (real(z)>0 && real(z)<10) && (imag(z)<k2 && imag(z)>k1)
+%     bd=min(abs(z-t1),10-abs(real(z)));   
+% else
+%     bd=min(abs(z+t1),10-abs(real(z))); 
+% 
+% end
+% 
+
+
+if real(z)<=0 && imag(z)>k2
+    bd=min(abs(z-t1),abs(z-10-t2));
+elseif real(z)<0 && (imag(z)>=k1 && imag(z)<=k2)
+    bd=min(abs(z-t1),10+abs(real(z)));
+elseif real(z)<0 && (imag(z)>=-k1 && imag(z)<=k1)
+    bd=abs(real(z));
+elseif real(z)<0 && (imag(z)<=-k1 && imag(z)>=-k2)
+    bd=min(abs(z+t1),10+abs(real(z)));
+elseif real(z)<=0 && imag(z)<-k2
+    bd=min(abs(z+t1),abs(z-10+t2));
+    
+elseif (real(z)>=0 && real(z)<=10) && imag(z)>k2
+    bd=min(abs(z-t1),abs(z-10-t2));
+elseif  (real(z)>0 && real(z)<10) && (imag(z)>=k1 && imag(z)<=k2)
+    bd=min(abs(z-t1),10-abs(real(z)));    
+elseif (real(z)>0 && real(z)<10) && (imag(z)>=-k1 && imag(z)<=k1)
+    bd=min(abs(real(z)),10-abs(real(z)));    
+elseif (real(z)>0 && real(z)<10) && (imag(z)<=-k1 && imag(z)>=-k2)
+    bd=min(abs(z+t1),10-abs(real(z)));    
+elseif (real(z)>0 && real(z)<10) && imag(z)<=-k2
+    bd=min(abs(z+t1),abs(z-10+t2));   
+    
+elseif real(z)>=10 && imag(z)>k2
+    bd=abs(z-10-t2);
+elseif real(z)>10 && (imag(z)>=-k2 && imag(z)<=k2)
+    bd=abs(real(z)-10);
+else
+    bd=abs(z-10+t2);
+end
