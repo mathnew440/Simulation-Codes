@@ -1,3 +1,5 @@
+% Example 4.12
+
 function bd=unequal3verticalslitsBD(z)
 
 k1=2.0478;
