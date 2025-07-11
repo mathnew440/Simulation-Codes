@@ -1,0 +1,40 @@
+% HMD Simulation Framework
+
+
+%Sample function call: h1=HMDSimulation(@(z) intWedgeBD(z), 1, 0:.01:5, 10000, .001)
+%Sample plot call: plot(0.98:.005:2.02, h1)
+
+
+function h = HMDSimulation(boundaryDist, z0, r, numRuns, epsilon)
+% HMDSimulation returns a matrix whose first row contains r-values and
+% whose second row contains the value of the h-function at those r-values
+  h = zeros(2,size(r,2));
+  h(1,:) = r; % The first row of h contains the r-values
+  for i=1:numRuns 
+    i
+    % ^What is the i doing there? Is this just so you can watch the
+    % progress?
+    current = z0; % current stores the position of the Brownian particle, 
+    % initialized to z0
+    bd = boundaryDist(current); % bd stores the distance of the Brownian 
+    % particle to the boundary
+    while bd > epsilon % If bd > epsilon, the Brownian particle has not hit 
+        % the boundary yet, so the run continues
+      theta = random('unif', 0, 2*pi);
+      current = current + bd*exp(1i*theta); % The Brownian particle 
+      % "teleports" to a random point on the circle of radius bd centered
+      % at its current position
+      bd = boundaryDist(current); % bd is updated to the new distance
+    end
+    for j=1:size(r,2)
+      if abs(current-z0)+bd < r(j) 
+        h(2,j) = h(2,j) + 1; % abs(current-z0)+bd gives the distance
+          % from z0 to the first hit on the boundary. If that distance is
+          % less than the r-value in r(j), h(2,j) is incremented by 1.
+      end
+    end
+  end
+  h(2,:) = h(2,:)/numRuns; % The second row of h contains the number of 
+  % runs that first hit within a particular distance of z0. To convert to a
+  % probability this is divided by the number of runs.
+end
