@@ -1,0 +1,24 @@
+function bd=doubleunequalslits1BD(z)
+
+
+if real(z)<-0.5
+    bd=abs(z+0.5);
+elseif (-0.5<=real(z)) && (real(z)<=-0.4)
+    bd=abs(imag(z));
+elseif (-0.4<real(z)) && (real(z)<0.2)
+    bd=min(abs(z+0.4),abs(z-0.2));
+% elseif (0<real(z)) && (real(z)<0.2)
+%     bd=abs(z-0.2);
+elseif (0.2<=real(z)) && (real(z)<=1)
+    bd=abs(imag(z));
+else
+    bd=abs(z-1);
+end
+
+
+
+
+
+
+
+
