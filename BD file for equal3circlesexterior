@@ -1,3 +1,5 @@
+%Example 5.6
+
 function bd=equal3circlesexteriorBD(z)
 
 
