@@ -1,0 +1,28 @@
+function bd=equal2circlesexteriorBD(z)
+
+
+% if real(z)<=-1 && abs(z+3)>2
+%     bd=abs(z+3)-2;
+% elseif real(z)>=1 && abs(z-3)>2
+%     bd=abs(z-3)-2;
+% elseif real(z)>-1 && real(z)<1
+%     bd=min(abs(z-3)-2,abs(z+3)-2);
+% else
+%     bd=0;
+% end
+
+if real(z)<0
+    z=-z;
+end
+
+if abs(z-3)>2
+    bd=abs(z-3)-2;
+else
+    bd=0;
+end
+
+
+
+
+
+
